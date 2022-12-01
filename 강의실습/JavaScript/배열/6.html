@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = ["김", "이", "박"];
+      var b = ["최"];
+      var c;
+
+      document.write("배열 a = " + a + "<br>"); // 김, 이, 박
+      document.write("배열 b = " + b + "<br>"); // 최
+
+      document.write("<hr>");
+
+      document.write("배열 a와 b를 연결해서 새로운 배열 c를 생성<br>");
+      c = a.concat(b);
+      document.write("배열 c = " + c); // 김, 이, 박, 최
+
+      document.write("<hr>");
+
+      document.write("배열 a를 다음과 같이 연결<br>");
+      c = a.join("##");
+      document.write(c); // 김##이##박
+
+      document.write("<hr>");
+
+      document.write("배열 a를 반대로 출력 reverse()<br>");
+      c = a.reverse();
+      document.write(c); // 박, 이, 김
+
+      document.write("<hr>");
+
+      document.write("배열 a를 slice해서 다음과 같이 출력<br>");
+      c = a.slice(1, 2);
+      document.write(c); // 이
+
+      document.write("<hr>");
+
+      document.write("배열 a를 정렬 sort()<br>");
+      c = a.sort();
+      document.write(c); // 김, 박, 이
+    </script>
+  </body>
+</html>

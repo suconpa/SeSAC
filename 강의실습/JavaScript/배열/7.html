@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var n = []; // 배열 n 선언
+
+      for (var i = 0; i < 10; i++) {
+        // 난수 10개 생성
+        var x = Math.random() * 100 + 1;
+        n[i] = Math.floor(x);
+      }
+
+      for (var i = 0; i < 10; i++) {
+        // 배열 출력
+        document.write(n[i] + " ");
+      }
+      document.write("<hr>");
+
+      var big = n[0];
+
+      for (var i = 1; i < 10; i++) {
+        // 큰 수 찾기
+        if (n[i] > big) big = n[i];
+      }
+
+      document.write("제일 큰 수는 " + big);
+      document.write("<hr>");
+
+      // compareFunction(a, b)이 0보다 작은 경우 a를 b보다 낮은 색인으로 정렬. 즉,a가 먼저 온다.
+      // compareFunction(a, b)이 0보다 큰 경우, b를 a보다 낮은 인덱스로 정렬
+      n.sort(function (a, b) {
+        return a - b;
+      }); // 배열 정렬
+
+      for (
+        var i = 0;
+        i < 10;
+        i++ // 배열 출력
+      )
+        document.write(n[i] + " ");
+    </script>
+  </body>
+</html>
