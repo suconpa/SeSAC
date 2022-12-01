@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var price_tshirt = 10000;
+      var price_sweater = 30000;
+      var total_price = 0;
+
+      num_tshirt = prompt("티셔츠 개수 입력 : ");
+      num_sweater = prompt("스웨터 개수 입력 : ");
+
+      total_price = price_tshirt * num_tshirt + price_sweater * num_sweater;
+
+      if (total_price <= 100000) {
+        total_price = total_price * 0.95;
+      } else {
+        total_price = total_price * 0.85;
+      }
+
+      document.write("티셔츠 개수 : ", num_tshirt, "<br>");
+      document.write("스웨터 개수 : ", num_sweater, "<br>");
+      document.write("합계 : ", total_price, "원");
+    </script>
+  </body>
+</html>

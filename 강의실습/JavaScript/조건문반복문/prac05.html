@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var num1 = parseInt(prompt("첫 번째 양의 정수를 입력하세요"));
+      var num2 = parseInt(prompt("두 번째 양의 정수를 입력하세요"));
+      var num3 = parseInt(prompt("세 번째 양의 정수를 입력하세요"));
+
+      var num_sum = num1 + num2 + num3;
+      var max_num = 0;
+
+      document.write(
+        "입력한 숫자 : " + num1 + ", " + num2 + ", " + num3 + "<br>"
+      );
+      // 세 수의 합이 짝수인 경우
+      if (num_sum % 2 == 0) {
+        // 큰 수 찾기
+        // 첫 번째 숫자가 제일 큰 수인 경우
+        if (num1 >= num2) {
+          max_num = num1;
+
+          if (num1 >= num3) {
+            max_num = num1;
+
+            document.write(
+              "세 수의 합은 짝수이고, 가장 큰 수는 " + max_num + "이다."
+            );
+          }
+          // 세 번째 숫자가 제일 큰 수인 경우
+          else {
+            max_num = num3;
+            document.write(
+              "세 수의 합은 짝수이고, 가장 큰 수는 ",
+              max_num,
+              "이다."
+            );
+          }
+        }
+        // 두 번째 숫자가 제일 큰 수인 경우
+        else {
+          max_num = num2;
+
+          if (num2 >= num3) {
+            max_num = num2;
+            document.write(
+              "세 수의 합은 짝수이고, 가장 큰 수는 ",
+              max_num,
+              "이다."
+            );
+          }
+          // 세 번째 숫자가 제일 큰 수인 경우
+          else {
+            max_num = num3;
+            document.write(
+              "세 수의 합은 짝수이고, 가장 큰 수는 ",
+              max_num,
+              "이다."
+            );
+          }
+        }
+      }
+      // 세 수의 합이 홀수인 경우
+      else {
+        document.write("세 수의 합은 홀수이고, 그 합은 ", num_sum, "이다.");
+      }
+    </script>
+  </body>
+</html>

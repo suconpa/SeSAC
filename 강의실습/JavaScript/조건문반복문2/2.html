@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>통신요금 할인</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>
+      <script>
+        var contractPrice = parseInt(prompt("계약 금액 입력을 입력하세요"));
+        var period = parseInt(prompt("사용 개월 수를 입력하세요."));
+        var cardCode = parseInt(prompt("카드 코드를 입력하세요."));
+
+        // 할인율
+        var discount;
+        var discounted_price, credit_discount, contractPrice;
+
+        if (period > 12) {
+          discount = 20;
+          discounted_price = (contractPrice * discount) / 100;
+        } else if (period > 6) {
+          discount = 10;
+          discounted_price = (contractPrice * discount) / 100;
+        } else {
+          discount = 0;
+          discounted_price = (contractPrice * discount) / 100;
+        }
+
+        if (cardCode == 11) {
+          credit_discount = (contractPrice * 5) / 100;
+        } else if (cardCode == 12) {
+          credit_discount = (contractPrice * 8) / 100;
+        } else if (cardCode == 13) {
+          credit_discount = (contractPrice * 12) / 100;
+        }
+
+        document.write("계약 금액 : ", contractPrice, "<br>");
+        document.write("사용 개월 수 : ", period, "<br>");
+        document.write("카드 코드 : ", cardCode, "<br>");
+
+        finalPrice = contractPrice - discounted_price - credit_discount;
+        document.write("최종 요금 : ", finalPrice, "원");
+      </script>
+    </h1>
+  </body>
+</html>

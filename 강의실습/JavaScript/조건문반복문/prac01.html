@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var click = ["delete", "shop", "buy"];
+      do {
+        var status = prompt("버튼을 클릭하세요");
+
+        switch (status) {
+          case click[0]:
+            document.write("상품이 삭제되었습니다.");
+            break;
+          case click[1]:
+            document.write("쇼핑을 계속합니다.");
+            break;
+          case click[2]:
+            document.write("계산합니다.");
+            break;
+          default:
+            alert("잘못 선택했습니다.");
+        }
+      } while (!click.includes(status));
+    </script>
+  </body>
+</html>

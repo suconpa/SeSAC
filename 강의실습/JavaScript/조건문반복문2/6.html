@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var scores = [];
+
+      var score = 0;
+      var count = 0;
+      var max_score = 0;
+      var min_score = 100;
+      var total = 0;
+
+      while (count < 5) {
+        score = parseInt(prompt("점수 입력 : "));
+        scores.push(score);
+
+        //  최대값 저장
+        if (max_score < score) {
+          max_score = score;
+        }
+
+        // 최소값 저장
+        if (min_score > score) {
+          min_score = score;
+        }
+
+        count += 1;
+      }
+
+      document.write("입력한 점수 : ", scores);
+      document.write("<hr>");
+      document.write("최고 점수 : ", max_score);
+      document.write("<br>");
+      document.write("최저 점수 : ", min_score);
+      document.write("<hr>");
+
+      // scores = [10, 20, 30, 40, 50]
+      var maxIndex = scores.indexOf(max_score); // 4
+      var minIndex = scores.indexOf(min_score); // 0
+
+      // splice(startIndex, deleteCount)
+      // startIndex : 시작 인덱스
+      // deleteCount : 제거할 요소의 수, 0 이하의 숫자를 넣으면 아무것도 제거 안함
+      // 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경
+      // 원본 배열 자체를 수정
+
+      // 최고 점수, 최저 점수 제거
+      scores.splice(maxIndex, 1);
+      scores.splice(minIndex, 1);
+
+      console.log(scores); // [20, 30, 40]
+
+      var sum = 0;
+
+      for (var j = 0; j < scores.length; j++) {
+        sum += scores[j];
+      }
+
+      document.write("합 : ", sum, "<br>");
+      document.write("평균 : ", sum / scores.length);
+    </script>
+  </body>
+</html>

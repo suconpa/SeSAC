@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 형변환 안하면 결과 제대로 안나올 수 있음 -> 문자열 비교
+      var num1 = parseInt(prompt("첫 번째 숫자를 입력하세요"));
+      var num2 = parseInt(prompt("두 번째 숫자를 입력하세요"));
+
+      document.write("첫 번째 입력한 숫자 : ", num1, "<br>");
+      document.write("두 번째 입력한 숫자 : ", num2, "<br>");
+
+      if (num1 >= num2) {
+        if (num1 % 2 == 0) {
+          document.write(num1, "이 큰 수이고, 짝수이다.");
+        } else {
+          document.write(num1, "이 큰 수이고, 홀수이다.");
+        }
+      } else {
+        if (num2 % 2 == 0) {
+          document.write(num2, "이 큰 수이고, 짝수이다.");
+        } else {
+          document.write(num2, "이 큰 수이고, 홀수이다.");
+        }
+      }
+    </script>
+  </body>
+</html>
