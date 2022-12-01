@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        text-align: center;
+        border: 1;
+        width: 300px;
+      }
+      tr {
+        text-align: center;
+      }
+      td {
+        width: 80px;
+      }
+      input[type="button"] {
+        width: 60px;
+      }
+    </style>
+  </head>
+  <body onload="init()">
+    <h3>계산기 만들기</h3>
+    <hr />
+    <form name="cal">
+      <table>
+        <tr>
+          <td colspan="4">
+            <input type="text" id="lcd" value="0" size="50" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" id="back" value="BACK" onclick="backward()" />
+          </td>
+          <td>
+            <input type="button" id="ce" value="CE" onclick="clearLcd()" />
+          </td>
+          <td>
+            <input type="button" id="c" value="C" onclick="clearLcd();" />
+          </td>
+          <td>
+            <input type="button" id="equal" value="=" onclick="calculate()" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              id="seven"
+              value="7"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="eight"
+              value="8"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="nine"
+              value="9"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="divi"
+              value="/"
+              onclick="addInput(this.value)"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              id="four"
+              value="4"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="five"
+              value="5"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="six"
+              value="6"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="mul"
+              value="*"
+              onclick="addInput(this.value)"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              id="one"
+              value="1"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="two"
+              value="2"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="three"
+              value="3"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              id="mina"
+              value="-"
+              onclick="addInput(this.value)"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="button"
+              id="zero"
+              value="0"
+              onclick="addInput(this.value)"
+            />
+          </td>
+          <td><input type="button" id="plus" value="NONE" /></td>
+          <td><input type="button" id="NONE1" value="NONE" /></td>
+          <td>
+            <input
+              type="button"
+              id="NONE2"
+              value="+"
+              onclick="addInput(this.value)"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      function init() {
+        // 텍스트 입력 창
+        let lcd = document.getElementById("lcd");
+      }
+
+      // 버튼 클릭 시 화면에 출력
+      function addInput(value) {
+        if (lcd.value == "0") lcd.value = value; // 단순 초기값인 경우
+        else lcd.value += value; // 입력창에 문자 추가
+      }
+
+      // back 버튼에 대한 처리
+      function backward() {
+        // 입력창의 현재 글자 수 계산
+        let len = lcd.value.length;
+
+        if (len == 0) return;
+        else lcd.value = lcd.value.substr(0, len - 1); // 입력창의 맨 뒷글자 삭제
+        // else lcd.value = lcd.value.slice(0, -1);
+      }
+
+      // "="가 눌러진 경우. 계산하고 결과 출력
+      function calculate() {
+        lcd.value = eval(lcd.value);
+      }
+
+      // 초기화
+      function clearLcd() {
+        lcd.value = "0";
+      }
+    </script>
+  </body>
+</html>

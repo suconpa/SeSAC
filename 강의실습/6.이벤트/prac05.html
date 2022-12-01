@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>span 태그에만 onmouseover/onmouseout</h3>
+    <hr />
+    <p>
+      span 태그에 대해서만 <span>마우스</span>가 올라올 때 밑줄이 그어지고
+      <span>마우스</span>가 내려갈 때 밑줄이 사라지도록
+      <span>자바스크립트 코드</span>를 작성한다.
+    </p>
+
+    <script>
+      document.onmouseover = function (e) {
+        // e.target : 이벤트가 발생한 대상 객체
+        console.log(e.target);
+
+        if (e.target.tagName.toLowerCase() != "span") return;
+        e.target.style.textDecoration = "underline";
+      };
+      document.onmouseout = function (e) {
+        if (e.target.tagName.toLowerCase() != "span") return;
+        e.target.style.textDecoration = "none";
+      };
+
+      /*
+      // <span> 태그를 찾아 스타일 적용
+      let spans = document.querySelectorAll("span");
+      spans.forEach((span) => {
+        span.addEventListener("mouseover", (e) => {
+          e.target.style.textDecoration = "underline";
+        });
+        span.addEventListener("mouseout", (e) => {
+          e.target.style.textDecoration = "";
+        });
+      });
+      */
+    </script>
+  </body>
+</html>
