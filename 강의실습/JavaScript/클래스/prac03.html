@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let result;
+
+      class FourCal {
+        constructor(first, second) {
+          this.first = first;
+          this.second = second;
+        }
+
+        add() {
+          result = this.first + this.second;
+          return result;
+        }
+
+        sub() {
+          result = this.first - this.second;
+          return result;
+        }
+
+        mul() {
+          result = this.first * this.second;
+          return result;
+        }
+
+        div() {
+          result = this.first / this.second;
+          return result;
+        }
+      }
+      const first = parseInt(prompt("첫 번째 숫자를 입력하세요 : "));
+      const second = parseInt(prompt("두 번째 숫자를 입력하세요 : "));
+
+      const num = new FourCal(first, second);
+
+      document.write(`두 수를 더한 값 : ${num.add()}<br>`);
+      document.write(`두 수를 뺀 값 : ${num.sub()}<br>`);
+      document.write(`두 수를 곱한 값 : ${num.mul()}<br>`);
+      document.write(`두 수를 나눈 값 : ${num.div()}<br>`);
+    </script>
+  </body>
+</html>

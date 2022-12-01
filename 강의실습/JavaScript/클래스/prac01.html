@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class GoodStock {
+        constructor(code, num) {
+          this.goodsCode = code;
+          this.stockNum = num;
+        }
+
+        addStock(amount) {
+          this.stockNum += amount;
+        }
+      }
+
+      code = prompt("상품코드를 입력하세요");
+      num = parseInt(prompt("재고수량을 입력하세요"));
+
+      const obj = new GoodStock(code, num);
+
+      alert(`상품코드 : ${obj.goodsCode}\n재고수량 : ${obj.stockNum}`);
+
+      amount = parseInt(prompt("추가할 수량을 입력하세요"));
+      obj.addStock(amount);
+
+      document.write(
+        `상품코드 : ${obj.goodsCode}<br>재고수량 : ${obj.stockNum}`
+      );
+    </script>
+  </body>
+</html>
